@@ -1,0 +1,74 @@
+{% extends 'AgricultureDetails/base.html' %}
+{% load static %}
+{% block content %}
+
+ <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Remote Works</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'generative_agriculture' %}">Home</a></li>
+          <!-- <li class="breadcrumb-item"></li> -->
+          <li class="breadcrumb-item active">Work with us</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+
+        {% for items in all_remote_work %}
+        <div class="col-mb-3">
+        
+          <div class="card bg-light mb-3">
+            <div class="card-body">
+            <p class="card-text">{{ items.when_posted }} </p>
+              <h5> <a href="#" class="card-link" target="_blank">{{ items.job_title }}</a></h5>
+             
+             <p class="card-title">{{ items.work_schedule }} </p>
+               <p class="card-text">{{ items.description }} </p>
+
+
+             
+              
+                                
+              <span class="badge card-text bg-warning ">{{ items.requirements1 }} </span>
+              <span class="badge bg-warning"> {{ items.requirements2 }} </span>
+              <span class="badge bg-warning"> {{ items.requirements3 }} </span>
+             <span class="badge bg-warning">  {{ items.requirements4 }} </span>
+              <span class="badge bg-warning">  {{ items.requirements5 }} </span><br>
+             <!-- <i class="fa-solid fa-check-to-slot">{{ items.payment_verification }} </i><p class="card-text">{{ items.payment_verification }} </p> -->
+              
+              <!-- <span class="card-text"> <i class="fa-solid fa-star"></i></span>
+              <span class="card-text"> <i class="fa-solid fa-star"></i></span> 
+              <span class="card-text"> <i class="fa-solid fa-star"></i></span> 
+              <span class="card-text"> <i class="fa-solid fa-star"></i></span> 
+              <span class="card-text"> <i class="fa-solid fa-star"></i></span>  -->
+                
+
+                    
+                    <span class="card-text">{{ items.budget }}</span>
+                    <span class="card-text"><i class="fa-solid fa-location-dot"></i>{{ items.location }}</span><br>
+
+                    <p class="card-text">{{ items.proposal }} </p>
+
+             
+             
+            </div>
+           
+          </div><!-- End Default Badges -->
+
+        
+          {% endfor %}
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+
+
+{% endblock content %}
